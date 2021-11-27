@@ -1,5 +1,6 @@
 package streams;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -46,7 +47,7 @@ public class DataProcessor {
     // region BONUS
 
     public static Optional<Grade> getBestMathGradeFromStudent(Student student) {
-        return Optional.empty();
+        return student.getGrades().stream().filter(grade -> grade.getSubject() == Subject.MATH).max(Comparator.comparing(grade -> grade.getType().getValue()));
     }
 
     public static List<Integer> getSortedAges(List<Student> students) {
