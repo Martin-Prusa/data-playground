@@ -1,6 +1,5 @@
 package streams;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,7 +50,7 @@ public class DataProcessor {
     }
 
     public static List<Integer> getSortedAges(List<Student> students) {
-        return new ArrayList<>();
+        return students.stream().map(student -> student.getAge()).sorted().toList();
     }
 
     // endregion
