@@ -20,7 +20,7 @@ public class DataProcessor {
     }
 
     public static List<Student> getStudentsWithMinimumAge(List<Student> students, int minAge) {
-        return students.stream().filter(student -> student.getAge() <= minAge).toList();
+        return students.stream().filter(student -> student.getAge() >= minAge).toList();
     }
 
 
